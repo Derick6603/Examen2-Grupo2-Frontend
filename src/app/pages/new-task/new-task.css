@@ -1,0 +1,22 @@
+.new-task-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
