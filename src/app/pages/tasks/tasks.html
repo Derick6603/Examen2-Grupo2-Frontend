@@ -17,11 +17,11 @@
     <p class="empty">Cargando tareas...</p>
   }
 
-  @if (!isLoading && tasks.length === 0) {
+  @if (!isLoading && tasks().length === 0) {
     <p class="empty">Aún no tienes tareas. ¡Crea la primera!</p>
   }
 
-  @for (task of tasks; track task.id) {
+  @for (task of tasks(); track task.id) {
     <mat-card class="task-card">
       <mat-card-content class="task-row">
         <div class="task-info">

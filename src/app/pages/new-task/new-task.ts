@@ -44,7 +44,7 @@ export class NewTaskComponent {
     this.errorMessage = '';
 
     this.taskService
-      .create({ title: this.title, priorityLevel: this.priorityLevel, notes: this.notes || null })
+      .createTask({ title: this.title, priorityLevel: this.priorityLevel, notes: this.notes || null })
       .subscribe({
         next: () => {
           this.isLoading = false;
