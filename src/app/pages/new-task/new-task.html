@@ -1,0 +1,39 @@
+﻿<div class="new-task-container">
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>Nueva tarea</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Título</mat-label>
+        <input matInput type="text" [(ngModel)]="title" placeholder="Ej. Entregar informe mensual" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Prioridad</mat-label>
+        <mat-select [(ngModel)]="priorityLevel">
+          <mat-option [value]="1">1 - Baja</mat-option>
+          <mat-option [value]="2">2 - Media</mat-option>
+          <mat-option [value]="3">3 - Alta</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Notas (opcional)</mat-label>
+        <textarea matInput rows="3" [(ngModel)]="notes"></textarea>
+      </mat-form-field>
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="isLoading">
+        {{ isLoading ? 'Guardando...' : 'Guardar' }}
+      </button>
+      <button mat-button routerLink="/tasks">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,34 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+}
+
+.switch-link {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}

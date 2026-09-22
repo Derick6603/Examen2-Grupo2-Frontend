@@ -1,0 +1,44 @@
+﻿<div class="tasks-container">
+  <div class="header">
+    <h1>Mis Tareas</h1>
+    <div class="header-actions">
+      <button mat-raised-button color="primary" routerLink="/new-task">
+        <mat-icon>add</mat-icon> Nueva tarea
+      </button>
+      <button mat-raised-button color="warn" (click)="onLogout()">Cerrar sesión</button>
+    </div>
+  </div>
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (isLoading) {
+    <p class="empty">Cargando tareas...</p>
+  }
+
+  @if (!isLoading && tasks.length === 0) {
+    <p class="empty">Aún no tienes tareas. ¡Crea la primera!</p>
+  }
+
+  @for (task of tasks; track task.id) {
+    <mat-card class="task-card">
+      <mat-card-content class="task-row">
+        <div class="task-info">
+          <h3>{{ task.title }}</h3>
+          <div class="task-meta">
+            <mat-chip>Prioridad {{ task.priorityLevel }}</mat-chip>
+            <span class="task-date">{{ task.createdAt | date: 'medium' }}</span>
+          </div>
+          @if (task.notes) {
+            <p class="task-notes">{{ task.notes }}</p>
+          }
+        </div>
+
+        <button mat-icon-button color="warn" (click)="onDelete(task)" aria-label="Eliminar tarea">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

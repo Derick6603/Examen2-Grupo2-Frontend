@@ -1,0 +1,62 @@
+.tasks-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.empty {
+  color: gray;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.task-card {
+  margin-bottom: 12px;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.task-date {
+  font-size: 13px;
+  color: #666;
+}
+
+.task-notes {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
